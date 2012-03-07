@@ -579,7 +579,3 @@ service tund /system/bin/tund
     user vpn
     group vpn net_admin net_raw
     ioprio be 2
-
-service post-boot /system/bin/sh /system/etc/init.post_boot.sh
-    user root
-    oneshot
