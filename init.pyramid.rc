@@ -121,6 +121,8 @@ on boot
     chown drm system /dev/htcdrm
     chmod 0660 /dev/htcdrm
 
+    write /proc/sys/vm/lowmem_reserve_ratio 16 16
+
     # Overwrite framework low memory killer setting
     write /sys/module/lowmemorykiller/parameters/adj 0,1,2,4,7,15
     write /sys/module/lowmemorykiller/parameters/minfree 6379,8125,9871,11919,20497,25282
