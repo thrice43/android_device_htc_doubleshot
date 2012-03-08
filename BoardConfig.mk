@@ -33,6 +33,7 @@ TARGET_BOOTLOADER_BOARD_NAME := pyramid
 # Platform
 TARGET_BOARD_PLATFORM := msm8660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
+BOARD_USES_ADRENO_200 := true
 
 # Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
