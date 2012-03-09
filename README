@@ -18,6 +18,7 @@ Misc issues:
 
 Building:
 -vorbeth/android_frameworks_base [ics_dev]
+-vorbeth/android_hardware_libhardware [ics_dev]
 -vorbeth/android_hardware_libhardware_legacy [ics]
 -vorbeth/android_hardware_qcom_display [ics]
 -vorbeth/android_vendor_qcom_opensource_omx_mm-core [ics_dev]
