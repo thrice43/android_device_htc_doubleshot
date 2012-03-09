@@ -18,12 +18,7 @@ Misc issues:
  kineto.ko module exists
 
 Building:
--frameworks/base, branch ics-omx
--hardware/libhardware, branch ics-chocolate
--hardware/libhardware_legacy, branch ics-test
--hardware/msm7k, branch ics-test
--hardware/qcom/display, branch ics-chocolate
--hardware/qcom/media, branch ics-test
+-hardware/libhardware_legacy, branch ics_dev
 
 Credits goes to:
 Cyanogenmod team
