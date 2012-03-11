@@ -44,9 +44,6 @@ static int g_trackball = -1;
 static int g_buttons = 0;
 static int g_attention = 0;
 static int g_haveAmberLed = 0;
-static int g_wimax = 0;
-static int g_caps = 0;
-static int g_func = 0;
 
 char const*const TRACKBALL_FILE
         = "/sys/class/leds/jogball-backlight/brightness";
@@ -78,20 +75,12 @@ char const*const RED_BLINK_FILE
 char const*const AMBER_BLINK_FILE
         = "/sys/class/leds/amber/blink";
 
-char const*const GREEN_BLINK_FILE
-        = "/sys/class/leds/green/blink";
-
 char const*const KEYBOARD_FILE
         = "/sys/class/leds/keyboard-backlight/brightness";
 
 char const*const BUTTON_FILE
         = "/sys/class/leds/button-backlight/brightness";
 
-char const*const CAPS_LED_FILE
-        = "/sys/class/leds/caps/brightness";
-
-char const*const FUNC_LED_FILE
-        = "/sys/class/leds/func/brightness";
 /**
  * device methods
  */
@@ -207,32 +196,6 @@ set_light_buttons(struct light_device_t* dev,
 }
 
 static int
-set_light_caps(struct light_device_t* dev,
-    struct light_state_t const* state)
-{
-    int err = 0;
-    int on = is_lit(state);
-    pthread_mutex_lock(&g_lock);
-    g_caps = on;
-    err = write_int(CAPS_LED_FILE, on?255:0);
-    pthread_mutex_unlock(&g_lock);
-    return err;
-}
-
-static int
-set_light_func(struct light_device_t* dev,
-    struct light_state_t const* state)
-{
-    int err = 0;
-    int on = is_lit(state);
-    pthread_mutex_lock(&g_lock);
-    g_func = on;
-    err = write_int(FUNC_LED_FILE, on?255:0);
-    pthread_mutex_unlock(&g_lock);
-    return err;
-}
-
-static int
 set_speaker_light_locked(struct light_device_t* dev,
         struct light_state_t const* state)
 {
@@ -243,10 +206,6 @@ set_speaker_light_locked(struct light_device_t* dev,
     unsigned int colorRGB;
 
     switch (state->flashMode) {
-        case LIGHT_FLASH_HARDWARE:
-            onMS = 500;
-            offMS = 2000;
-            break;
         case LIGHT_FLASH_TIMED:
             onMS = state->flashOnMS;
             offMS = state->flashOffMS;
@@ -278,7 +237,7 @@ set_speaker_light_locked(struct light_device_t* dev,
         if (red) {
             write_int(AMBER_LED_FILE, 1);
             write_int(GREEN_LED_FILE, 0);
-        } else if (green || blue) {
+        } else if (green) {
             write_int(AMBER_LED_FILE, 0);
             write_int(GREEN_LED_FILE, 1);
         } else {
@@ -316,13 +275,7 @@ set_speaker_light_locked(struct light_device_t* dev,
         }
         write_int(RED_BLINK_FILE, blink);
     } else {
-	if (red) {
-		write_int(GREEN_BLINK_FILE, 0);
-		write_int(AMBER_BLINK_FILE, blink);
-	} else {
-		write_int(AMBER_BLINK_FILE, 0);
-		write_int(GREEN_BLINK_FILE, blink);
-	}
+        write_int(AMBER_BLINK_FILE, blink);
     }
 
     return 0;
@@ -429,12 +382,6 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     }
     else if (0 == strcmp(LIGHT_ID_ATTENTION, name)) {
         set_light = set_light_attention;
-    }
-    else if (0 == strcmp(LIGHT_ID_CAPS, name)) {
-        set_light = set_light_caps;
-    }
-    else if (0 == strcmp(LIGHT_ID_FUNC, name)) {
-        set_light = set_light_func;
     }
     else {
         return -EINVAL;
