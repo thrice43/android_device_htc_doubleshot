@@ -4,6 +4,7 @@ Kernel:
 - HTC 3.0.16 kernel from 3.32.401.5 ota
 
 Current issues:
+- No service
 - Graphical curruption (Not flickering)
 - Very low volume
 
