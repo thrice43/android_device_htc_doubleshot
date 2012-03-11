@@ -32,6 +32,9 @@
 
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
 
+# Insecure boot
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
+
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048 
