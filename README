@@ -7,9 +7,11 @@ Current issues:
 - Unkown
 
 Building:
+- vorbeth/android_frameworks_base [ics_dev]
+
+Building from others:
 - Kali-/android_external_v8 [ics_chocolate_M8260AAABQNLZA30136]
 - Kali-/android_external_webkit [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_frameworks_base [ics_chocolate_M8260AAABQNLZA30136]
 - Kali-/android_hardware_libhardware [ics_chocolate_M8260AAABQNLZA30136]
 - Kali-/android_hardware_libhardware_legacy [ics_chocolate_M8260AAABQNLZA30136]
 - Kali-/android_hardware_msm7k [ics_chocolate_M8260AAABQNLZA30136]
