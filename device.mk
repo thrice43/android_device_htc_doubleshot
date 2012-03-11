@@ -112,7 +112,7 @@ PRODUCT_COPY_FILES += \
 # idc
 PRODUCT_COPY_FILES += \
     device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
-    device/htc/pyramid/idc/pyramid-keypad.idc:system/usr/idc/pyramid-keypad.idc
+    device/htc/pyramid/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # HTC BT Audio tune
 PRODUCT_COPY_FILES += device/htc/pyramid/configs/AudioBTID.csv:system/etc/AudioBTID.csv
