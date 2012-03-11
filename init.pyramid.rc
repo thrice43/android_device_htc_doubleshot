@@ -218,7 +218,7 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci \
     disabled
     oneshot
 
-service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p25 /dev/block/mmcblk0p26 /dev/block/mmcblk0p18
+service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmcblk0p27 /dev/block/mmcblk0p18
     class late_start
     user root
     disabled
