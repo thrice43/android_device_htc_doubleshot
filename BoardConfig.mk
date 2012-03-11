@@ -12,121 +12,62 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# BoardConfig.mk
 #
-# Product-specific compile-time definitions
+# This file sets variables that control the way modules are built
+# thorughout the system. It should not be used to conditionally
+# disable makefiles (the proper mechanism to control what gets
+# included in a build is to use PRODUCT_PACKAGES in a product
+# definition file).
 #
 
-# Use the non-open-source parts if they are present
+# WARNING: This line must come *before* including the proprietary
+# variant, so that it gets overwritten by the parent (which goes
+# against the traditional rules of inheritance).
+
+# inherit from common msm8660
+-include device/htc/msm8660-common/BoardConfigCommon.mk
+
+# inherit from the proprietary version
 -include vendor/htc/pyramid/BoardConfigVendor.mk
 
-# Extra kernel headers not present in bionic
-TARGET_SPECIFIC_HEADER_PATH := device/htc/pyramid/include
-
-# Bootloader
-TARGET_NO_BOOTLOADER := true
-TARGET_NO_KERNEL := false
-TARGET_NO_RADIOIMAGE := true
 TARGET_BOOTLOADER_BOARD_NAME := pyramid
-#TARGET_PROVIDES_INIT_RC := true
 
-# Platform
-TARGET_BOARD_PLATFORM := msm8660
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
-BOARD_USES_ADRENO_200 := true
-
-# Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DQCOM_HARDWARE
-
-# Architecture
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
-TARGET_ARCH_VARIANT := armv7-a-neon
-ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
-
-# Insecure boot
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
-
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
-
-# GPS
-BOARD_USES_QCOM_GPS := true
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-
-# RIL
-BOARD_PROVIDES_LIBRIL := true
-
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
-
-# Audio
-BOARD_USES_QCOM_LPA := true
-BOARD_USES_AUDIO_LEGACY := true
-BOARD_USES_GENERIC_AUDIO := false
-# TODO: logic for this flag seems reversed, confirm?
-#TARGET_PROVIDES_LIBAUDIO := false
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_BCM := true
-
-# Camera
-USE_CAMERA_STUB := false
-# ifeq ($(USE_CAMERA_STUB),false)
-# BOARD_CAMERA_LIBRARIES := libcamera
-# endif
-
-# Memory allocation
-TARGET_GRALLOC_USES_ASHMEM := false
-TARGET_USES_ION := false
-
-# Graphics
-#TARGET_QCOM_HDMI_OUT := true
-TARGET_HAVE_BYPASS := false
-TARGET_USES_SF_BYPASS := false
-TARGET_USES_OVERLAY := false
-TARGET_USES_GENLOCK := true
-TARGET_USES_C2D_COMPOSITION := true
-USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := device/htc/pyramid/egl.cfg
-
-# USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
-
-# Wi-Fi
-WPA_SUPPLICANT_VERSION      := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-BOARD_WLAN_DEVICE           := bcm4329
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcm4329/parameters/fwpath"
-WIFI_DRIVER_MODULE_NAME     := "bcm4329"
-WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
-
-# Kernel
-BOARD_KERNEL_BASE := 0x48000000
-BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
+BOARD_KERNEL_BASE := 0x48000000
+BOARD_KERNEL_PAGE_SIZE := 2048 
 
-# Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
-TARGET_RECOVERY_UI_LIB := librecovery_ui_pyramid
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
 
-# Filesystem
+# cat /proc/emmc
+#dev:        size     erasesize name
+#mmcblk0p31: 000ffa00 00000200 "misc"
+#mmcblk0p21: 00fffc00 00000200 "recovery"
+#mmcblk0p20: 01000000 00000200 "boot"
+#mmcblk0p22: 31fffc00 00000200 "system"
+#mmcblk0p24: 077fde00 00000200 "cache"
+#mmcblk0p23: 4aabc400 00000200 "userdata"
+#mmcblk0p27: 01400000 00000200 "devlog"
+#mmcblk0p29: 00040000 00000200 "pdata"
+#mmcblk0p17: 02800000 00000200 "radio"
+#mmcblk0p19: 01000000 00000200 "adsp"
+#mmcblk0p18: 007ffa00 00000200 "radio_config"
+#mmcblk0p25: 00400000 00000200 "modem_st1"
+#mmcblk0p26: 00400000 00000200 "modem_st2"
+
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 20044333056
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_CUSTOM_GRAPHICS := ../../../device/htc/pyramid/recovery/graphics.c
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
-# Extra
+TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+
+TARGET_RECOVERY_INITRC := device/htc/pyramid/recovery/init.rc
+BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
+BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
+BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
+BOARD_USES_MMCUTILS := true
+BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true

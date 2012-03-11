@@ -11,34 +11,27 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+ 
 #
 # This file is the build configuration for a full Android
 # build for pyramid hardware. This cleanly combines a set of
 # device-specific aspects (drivers) with a device-agnostic
-# product configuration (apps).
+# product configuration (apps). Except for a few implementation
+# details, it only fundamentally contains two inherit-product
+# lines, full and maguro, hence its name.
 #
-
+ 
 # Get the long list of APNs
-PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
-
+PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+ 
 # Camera
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES := \
     Camera
 
-# Property Overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.gmsversion=4.0.3_r0 \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1 \
-    ro.setupwizard.enable_bypass=1
-
-
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # This is where we'd set a backup provider if we had one
 #$(call inherit-product, device/sample/products/backup_overlay.mk)
-
 # Inherit from pyramid device
 $(call inherit-product, device/htc/pyramid/device.mk)
 
@@ -46,4 +39,5 @@ $(call inherit-product, device/htc/pyramid/device.mk)
 PRODUCT_NAME := full_pyramid
 PRODUCT_DEVICE := pyramid
 PRODUCT_BRAND := HTC
-PRODUCT_MODEL := HTC Pyramid
+PRODUCT_MANUFACTURER := HTC
+PRODUCT_MODEL := Sensation

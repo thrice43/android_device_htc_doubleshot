@@ -1,33 +1,26 @@
 Ice Cream Sandwich device tree for HTC Pyramid (Sensation)
 
 Kernel:
--HTC 3.0.16 kernel from 3.32.401.5
+- HTC 3.0.16 kernel from 3.32.401.5 ota
 
 Current issues:
--wifi tethering doesn't work
--camcorder doesn't work
--bluetooth has various issues
-
-Misc issues:
--Invensys MPU cannot be built from source since we do not have access to
- HTC kernel module IOCTLs, using sensors.pyramid from 3.32 leak
--Audio uses HTC libs, since audio libs from source doesn't record properly
--Video playback HW Decoding is problematic
--It should be theoretically possible for wifi calling to work, since the
- kineto.ko module exists
+- Unkown
 
 Building:
--vorbeth/android_frameworks_base [ics_dev]
--vorbeth/android_hardware_libhardware [ics_dev]
--vorbeth/android_hardware_libhardware_legacy [ics]
--vorbeth/android_hardware_qcom_display [ics]
--vorbeth/android_vendor_qcom_opensource_omx_mm-core [ics_dev]
--vorbeth/android_vendor_qcom_opensource_omx_mm-video [ics_dev]
+- Kali-/android_external_v8 [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_external_webkit [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_frameworks_base [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_hardware_libhardware [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_hardware_libhardware_legacy [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_hardware_msm7k [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_hardware_qcom_display [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_hardware_qcom_media [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_vendor_qcom_opensource_omx_mm-core [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_vendor_qcom_opensource_omx_mm-video [ics_chocolate_M8260AAABQNLZA30136]
+- Kali-/android_vendor_qcom_opensource_v8 [ics_chocolate_M8260AAABQNLZA30136]
 
 Credits goes to:
 Cyanogenmod team
-Evervolv team
-Tiamat team
 intervigilium
 elelinux
 blahbl4hblah
