@@ -1,6 +1,42 @@
 # Configuration files
 #etc/vpimg
 
+# Codec configs
+etc/AdieHWCodec.csv
+etc/AIC3254_REG.csv
+etc/AIC3254_REG_DualMic.csv
+etc/AudioBTID.csv
+etc/CodecDSPID.txt
+etc/CodecDSPID_WB.txt
+etc/TPA2051_CFG.csv
+etc/TPA2051_CFG_XC.csv
+
+# Soundimage
+etc/soundimage/Sound_MFG.txt
+etc/soundimage/Sound_Original_Recording.txt
+etc/soundimage/Sound_Original_SPK.txt
+etc/soundimage/Sound_Original.txt
+etc/soundimage/Sound_Phone_Original_HP_LE.txt
+etc/soundimage/Sound_Phone_Original_HP.txt
+etc/soundimage/Sound_Phone_Original_HP_WB_LE.txt
+etc/soundimage/Sound_Phone_Original_HP_WB.txt
+etc/soundimage/Sound_Phone_Original_REC_NEL.txt
+etc/soundimage/Sound_Phone_Original_REC.txt
+etc/soundimage/Sound_Phone_Original_REC_WB.txt
+etc/soundimage/Sound_Phone_Original_SPK.txt
+etc/soundimage/Sound_Phone_Original_SPK_WB.txt
+etc/soundimage/Sound_Rec_Landscape.txt
+etc/soundimage/Sound_Recording.txt
+etc/soundimage/Sound_Rec_Portrait.txt
+
+# Firmware
+etc/firmware/bcm4329.hcd
+etc/firmware/fw_bcm4329_apsta.bin
+etc/firmware/fw_bcm4329.bin
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
+etc/firmware/vidc_1080p.fw
+
 # Executable files
 bin/charging
 bin/htcbatt
