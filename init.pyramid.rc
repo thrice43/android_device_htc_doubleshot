@@ -210,10 +210,20 @@ service bugreport /system/bin/dumpstate -d -v -o /sdcard/bugreports/bugreport
     oneshot
     keycodes 114 115
 
-service hciattach /system/bin/brcm_patchram_plus --enable_hci \
-    --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
+#service hciattach /system/bin/brcm_patchram_plus --enable_hci \
+#    --baudrate 3000000 --patchram /vendor/firmware/bcm4329.hcd /dev/ttyHS0
+#    class late_start
+#    user bluetooth
+#    group bluetooth net_bt_admin
+#    disabled
+#    oneshot
+
+# Make sure we startup btld before hcid
+# Set target address to emulator host loopback IF
+# Limit baudrate to 460800 to ensure reliable uart operation
+service btld /system/bin/btld -lpm 1 -hb 3000000
     class late_start
-    user bluetooth
+    user root
     group bluetooth net_bt_admin
     disabled
     oneshot
