@@ -153,9 +153,10 @@
     <!-- An Array of "[ConnectivityManager connectionType],
          [# simultaneous connection types]"  -->
     <string-array translatable="false" name="radioAttributes">
-        <item>"1,1"</item>
-        <item>"0,1"</item>
-        <item>"7,1"</item>
+        <item>1,1</item>
+        <item>0,1</item>
+        <item>6,1</item>
+        <item>18,1</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -171,6 +172,9 @@
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
         <item>wl0.1</item>
+        <item>tiap0</item>
+        <item>wlan0</item>
+        <item>wlan1</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -185,10 +189,9 @@
     <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
     <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
     <integer-array translatable="false" name="config_tether_upstream_types">
-        <item>0</item>
         <item>1</item>
-        <item>5</item>
-        <item>7</item>
+        <item>4</item>
+        <item>6</item>
     </integer-array>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
@@ -217,10 +220,6 @@
     <integer-array name="config_virtualKeyVibePattern">
         <item>40</item>
     </integer-array>
-
-    <!-- Boolean indicating if restoring network selection should be skipped -->
-    <!-- The restoring is handled by modem if it is true -->
-    <bool translatable="false" name="skip_restoring_network_selection">true</bool>
 
     <!-- If this value is true, The mms content-disposition field is supported correctly.
     If false, Content-disposition fragments are ignored -->
