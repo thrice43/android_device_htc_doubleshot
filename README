@@ -4,22 +4,20 @@ Kernel:
 - HTC 3.0.16 kernel from 3.32.401.5 ota
 
 Current issues:
-- No service
-- Graphical curruption (Not flickering)
-- Very low volume
+- I/Adreno  (  122): ioctl code 0x40140931 (IOCTL_KGSL_TIMESTAMP_EVENT) failed: errno 22 Invalid argument
 
 Building:
-- vorbeth/android_frameworks_base [ics_dev]
+- vorbeth/android_device_htc_pyramid [ics_msm8660]
+- vorbeth/android_device_htc_msm8660-common
+- vorbeth/android_hardware_qcom_display [ics-test]
+- vorbeth/android_vendor_qcom_opensource_omx_mm-core [ics_dev]
+- vorbeth/android_vendor_qcom_opensource_omx_mm-video [ics_dev]
 
 Building from others:
-- Kali-/android_hardware_libhardware [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_hardware_libhardware_legacy [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_hardware_msm7k [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_hardware_qcom_display [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_hardware_qcom_media [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_vendor_qcom_opensource_omx_mm-core [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_vendor_qcom_opensource_omx_mm-video [ics_chocolate_M8260AAABQNLZA30136]
-- Kali-/android_vendor_qcom_opensource_v8 [ics_chocolate_M8260AAABQNLZA30136]
+- intervigilium/android_frameworks_base [ics-omx]
+- intervigilium/android_hardware_libhardware [ics-chocolate]
+- intervigilium/android_hardware_msm7k [ics-test]
+- intervigilium/android_hardware_qcom_media [ics-test]
 
 Credits goes to:
 Cyanogenmod team
