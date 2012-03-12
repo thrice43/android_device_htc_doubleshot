@@ -6,12 +6,12 @@ Kernel:
 Current issues:
 - I/Adreno  (  122): ioctl code 0x40140931 (IOCTL_KGSL_TIMESTAMP_EVENT) failed: errno 22 Invalid argument
 
-Building:
-- vorbeth/android_device_htc_pyramid [ics_msm8660]
-- vorbeth/android_device_htc_msm8660-common
-- vorbeth/android_hardware_qcom_display [ics-test]
-- vorbeth/android_vendor_qcom_opensource_omx_mm-core [ics_dev]
-- vorbeth/android_vendor_qcom_opensource_omx_mm-video [ics_dev]
+Building local:
+- android_device_htc_pyramid
+- android_device_htc_msm8660-common
+- android_hardware_qcom_display
+- android_vendor_qcom_opensource_omx_mm-core
+- android_vendor_qcom_opensource_omx_mm-video
 
 Building from others:
 - intervigilium/android_frameworks_base [ics-omx]
