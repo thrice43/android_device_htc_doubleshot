@@ -16,6 +16,9 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# common msm8660 configs
+$(call inherit-product, device/htc/msm8660-common/msm8660.mk)
+
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
@@ -103,8 +106,6 @@ PRODUCT_COPY_FILES += \
     device/htc/pyramid/prebuilt/bcm4329.ko:system/lib/modules/bcm4329.ko \
     device/htc/pyramid/prebuilt/kineto_gan.ko:system/lib/modules/kineto_gan.ko
 
-# common msm8660 configs
-$(call inherit-product, device/htc/msm8660-common/msm8660.mk)
 
 ## htc audio settings
 $(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
