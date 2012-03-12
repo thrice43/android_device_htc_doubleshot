@@ -5,6 +5,7 @@ Kernel:
 
 Current issues:
 - I/Adreno  (  122): ioctl code 0x40140931 (IOCTL_KGSL_TIMESTAMP_EVENT) failed: errno 22 Invalid argument
+- Video playback within youtude, occasional breakup and going dark.
 
 Building local:
 - android_device_htc_pyramid
