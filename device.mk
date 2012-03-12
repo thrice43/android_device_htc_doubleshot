@@ -74,7 +74,7 @@ PRODUCT_COPY_FILES += \
     
 ## Firmware
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
+    device/htc/pyramid/firmware/bcm4329.hcd:system/etc/firmware/bcm4329.hcd \
     device/htc/pyramid/firmware/fw_bcm4329.bin:system/etc/firmware/fw_bcm4329.bin \
     device/htc/pyramid/firmware/fw_bcm4329_apsta.bin:system/etc/firmware/fw_bcm4329_apsta.bin \
     device/htc/pyramid/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
