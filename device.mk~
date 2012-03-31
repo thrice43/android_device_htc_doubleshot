@@ -33,11 +33,11 @@ PRODUCT_COPY_FILES += \
 ## ramdisk stuffs
 PRODUCT_COPY_FILES += \
     device/htc/doubleshot/prebuilt/init:root/init \
-    device/htc/doubleshot/init.doublehsot.rc:root/init.doublehsot.rc \
-    device/htc/doubleshot/ueventd.doublehsot.rc:root/ueventd.doublehsot.rc
+    device/htc/doubleshot/init.pyramid.rc:root/init.pyramid.rc \
+    device/htc/doubleshot/ueventd.pyramid.rc:root/ueventd.pyramid.rc
 
 ## (2) Also get non-open-source specific aspects if available
-$(call inherit-product-if-exists, vendor/htc/doubleshot/doublehsot-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/doubleshot/pyramid-vendor.mk)
 
 ## misc
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -64,11 +64,11 @@ PRODUCT_COPY_FILES += \
     device/htc/doubleshot/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
     device/htc/doubleshot/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl\
     device/htc/doubleshot/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
-    device/htc/doubleshot/keylayout/doublehsot-keypad.kl:system/usr/keylayout/doublehsot-keypad.kl
+    device/htc/doubleshot/keylayout/pyramid-keypad.kl:system/usr/keylayout/pyramid-keypad.kl
 
 # Keychars
 PRODUCT_COPY_FILES += \
-    device/htc/doubleshot/keychars/doublehsot-keypad.kcm:system/usr/keychars/doublehsot-keypad.kcm
+    device/htc/doubleshot/keychars/pyramid-keypad.kcm:system/usr/keychars/pyramid-keypad.kcm
 
 # idc
 PRODUCT_COPY_FILES += \
@@ -112,4 +112,4 @@ $(call inherit-product, device/htc/doubleshot/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 
-$(call inherit-product-if-exists, vendor/htc/doubleshot/doublehsot-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/doubleshot/pyramid-vendor.mk)

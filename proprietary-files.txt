@@ -118,7 +118,7 @@ lib/libhtc_ril.so
 lib/libril.so
 
 # Sensors
-lib/hw/sensors.pyramid.so
+lib/hw/sensors.doubleshot.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so

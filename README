@@ -1,4 +1,4 @@
-Ice Cream Sandwich device tree for HTC Pyramid (Sensation)
+Ice Cream Sandwich device tree for HTC Doubleshot (MyTouch_4g_Slide)
 
 Kernel:
 - HTC 3.0.16 kernel from 3.32.401.5 ota
@@ -8,7 +8,7 @@ Current issues:
 - Video playback within youtude, occasional breakup and going dark.
 
 Building local:
-- android_device_htc_pyramid
+- android_device_htc_doubleshot
 - android_device_htc_msm8660-common
 - android_hardware_qcom_display
 - android_vendor_qcom_opensource_omx_mm-core

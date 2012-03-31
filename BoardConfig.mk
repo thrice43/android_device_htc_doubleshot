@@ -28,18 +28,18 @@
 -include device/htc/msm8660-common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
--include vendor/htc/pyramid/BoardConfigVendor.mk
+-include vendor/htc/doubleshot/BoardConfigVendor.mk
 
-TARGET_BOOTLOADER_BOARD_NAME := pyramid
+TARGET_BOOTLOADER_BOARD_NAME := doubleshot
 
 # Insecure boot
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 
-BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=doubleshot no_console_suspend=1
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048 
 
-BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := doubleshot
 
 # cat /proc/emmc
 #dev:        size     erasesize name
@@ -62,12 +62,12 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838860800
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 20044333056
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_CUSTOM_GRAPHICS := ../../../device/htc/pyramid/recovery/graphics.c
+BOARD_CUSTOM_GRAPHICS := ../../../device/htc/doubleshot/recovery/graphics.c
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 
-TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := device/htc/doubleshot/prebuilt/kernel
 
-TARGET_RECOVERY_INITRC := device/htc/pyramid/recovery/init.rc
+TARGET_RECOVERY_INITRC := device/htc/doubleshot/recovery/init.rc
 BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
 BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2

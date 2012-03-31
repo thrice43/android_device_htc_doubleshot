@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- pyramid-specific phone app resources. -->
+<!-- doubleshot-specific phone app resources. -->
 <resources>
 
     <!-- Flag indicating if the tty is enabled -->
