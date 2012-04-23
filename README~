@@ -4,7 +4,8 @@ Kernel:
 - HTC 3.0.16 kernel from 3.32.401.5 ota
 
 Current issues:
-- not compiling
+- I/Adreno  (  122): ioctl code 0x40140931 (IOCTL_KGSL_TIMESTAMP_EVENT) failed: errno 22 Invalid argument
+- Video playback within youtude, occasional breakup and going dark.
 
 Building local:
 - android_device_htc_doubleshot
@@ -26,4 +27,3 @@ elelinux
 blahbl4hblah
 Sc2k
 toastcfh
-vorbeth
