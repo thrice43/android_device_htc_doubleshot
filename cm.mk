@@ -1,4 +1,4 @@
-$(call inherit-product, device/htc/doubleshot/full_pyramid.mk)
+$(call inherit-product, device/htc/doubleshot/full_doubleshot.mk)
 
 PRODUCT_RELEASE_NAME := MyTouch_4g_Slide
 
